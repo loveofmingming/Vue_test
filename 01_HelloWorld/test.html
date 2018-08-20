@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_HelloWorld</title>
+</head>
+<body>
+
+<!--
+  1. 引入Vue.js
+  2. 创建Vue对象
+    el : 指定根element(选择器)
+    data : 初始化数据(页面可以访问)
+  3. 双向数据绑定 : v-model
+  4. 显示数据 : {{xxx}}
+  5. 理解vue的mvvm实现
+-->
+<!--<div id="app">-->
+  <!--<input type="text" v-model="aaa">-->
+  <!--<p>Hello {{aaa}}</p>-->
+<!--</div>-->
+<!--<script type="text/javascript" src="../js/vue.js"></script>-->
+<!--<script type="text/javascript">-->
+  <!--const vm = new Vue({-->
+    <!--el:'#app',-->
+    <!--data:({-->
+      <!--aaa:'222'-->
+    <!--})-->
+  <!--})-->
+<!--</script>-->
+
+<!--<div id="app">-->
+  <!--<input type="text" v-model="aaa">-->
+  <!--<p>Hello {{aaa}} </p>-->
+<!--</div>-->
+ <!--<script type="text/javascript" src="../js/vue.js"></script>-->
+ <!--<script type="text/javascript">-->
+   <!--const vm = new Vue({-->
+     <!--el:'#app',-->
+     <!--data:({-->
+       <!--aaa:'111'-->
+     <!--})-->
+   <!--})-->
+ <!--</script>-->
+<!--<div id="aaa">-->
+  <!--<input type="text" v-model="bbb">-->
+  <!--<p>{{bbb}}</p>-->
+<!--</div>-->
+<!--<script type="text/javascript" src="../js/vue.js"></script>-->
+<!--<script type="text/javascript">-->
+  <!--const vm = new Vue({-->
+    <!--el:'#aaa',-->
+    <!--data:{-->
+      <!--bbb:'jjj'-->
+    <!--}-->
+  <!--})-->
+<!--</script>-->
+<!--<div id="aaa">-->
+  <!--<input type="text" v-model="jjj">-->
+  <!--<p>{{jjj}}</p>-->
+<!--</div>-->
+<!--<script type="text/javascript" src="../js/vue.js"></script>-->
+<!--<script type="text/javascript">-->
+  <!--const vm = new Vue({-->
+    <!--el:'#aaa',-->
+    <!--data:{-->
+      <!--jjj:'jjj'-->
+    <!--}-->
+  <!--})-->
+<!--</script>-->
+<!--<div id="app">-->
+  <!--<input type="text" v-model="jjj">-->
+  <!--<p>{{jjj}}</p>-->
+<!--</div>-->
+<!--<script type="text/javascript" src="../js/vue.js"></script>-->
+<!--<script type="text/javascript">-->
+ <!--const vm=new Vue({-->
+    <!--el:'#app',-->
+    <!--data:{-->
+      <!--jjj:'sss'-->
+    <!--}-->
+  <!--})-->
+<!--</script>-->
+
+<!--<div id="app">-->
+  <!--<input type="text" v-model="bbb">-->
+  <!--<p>{{bbb}}</p>-->
+<!--</div>-->
+<!--<script type="text/javascript" src="../js/vue.js"></script>-->
+<!--<script type="text/javascript">-->
+  <!--new Vue({-->
+    <!--el:'#app',-->
+    <!--data:{-->
+      <!--bbb:'bbb'-->
+    <!--}-->
+  <!--})-->
+  <!---->
+<!--</script>-->
+<div id="test">
+  <input type="text" v-model="msg">
+  <p>Hello {{msg}}</p>
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el:'#test',
+    data:{
+      msg:'atguigu'
+    }
+  })
+</script>
+
+<div id="test1">
+  <input type="text" v-model="msg1">
+  <p>
+    Hello {{msg1}}
+  </p>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el:'#test1',
+    data:{
+      msg1:'11111111'
+    }
+  })
+</script>
+
+<div id="test2">
+  <input type="text" v-model="msg2">
+  <p>Hello {{msg2}}</p>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el:'test2',
+    data:{
+      msg2:'3333333'
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>react</title>
+</head>
+<body>
+<div id="demo">
+  <input type="text" v-model="searchName">
+  <ul>
+    <li v-for="(p,index) in filterPersons" :key="index">
+      {{index}}---{{p.name}}---{{p.age}}
+    </li>
+  </ul>
+  <button @click="setOrderType(1)">升</button>
+  <button @click="setOrderType(2)">降</button>
+  <button>原</button>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el:'demo',
+    data:{
+      searchName:'',
+      orderType: 0 ,
+      persons:[
+        {name:'jack',age:18},
+        {name:'tom',age:19},
+        {name:'bob',age:20},
+        {name:'lily',age:18}
+      ]
+    }
+  })
+</script>
+
+</body>
+</html>

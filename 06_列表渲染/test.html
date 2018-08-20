@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>06_列表渲染</title>
+</head>
+<body>
+
+<!--
+vue 本身只是监视了persons变化，没有监视数组内部数据变化
+vue重写了数组中的一系列改变数组内部数据的方法（先调用原生，更新界面）--》数组内部改变，界面自动变化
+1. 列表显示
+  数组: v-for / index
+  对象: v-for / key
+2. 列表的更新显示
+  删除item
+  替换item
+-->
+
+<div id="demo">
+  <h2>测试: v-for 遍历数组</h2>
+  <ul>
+    <li v-for="(p,index) in persons" :key="index">
+      {{index}}---{{p.name}}----{{p.age}}
+      ----<button @click="del">删除</button>
+      ----<button @click="upd(index,{name:'lucy',age:18})">更新</button>
+    </li>
+  </ul>
+
+  <h2>测试: v-for 遍历对象</h2>
+  <ul>
+    <li v-for="(value,key) in persons[2]">
+     {{key}}-----{{value}}
+    </li>
+  </ul>
+
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+   new Vue({
+     el:'#demo',
+     data:{
+       persons:[
+         {name:'jack',age:18},
+         {name:'tom',age:19},
+         {name:'bob',age:20},
+         {name:'lily',age:18}
+       ]
+     },
+     methods:{
+        del(index){//删除persons中指定index的person
+          this.persons.splice(index,1)
+        },
+       upd(index,newp){
+         //不改变persons本身，数组内部发生了变化，没有调用变异方法，不会更新界面
+//          this.persons[index]=newp
+//            this.persons = []
+            this.persons.splice(index,1,newp)
+         // 1 为更改， 0 的话 则为增加
+       }
+     }
+   })
+</script>
+
+<div id="demo1">
+  <h2>1111111</h2>
+  <ul>
+    <li v-for="(p,index) in persons" :key="index">
+      {{index}}---{{p.name}}---{{p.age}}
+      --- <button @click="del">删除</button>
+      --- <button @click="upd(index,{name:'Lily',age:18})">更新</button>
+    </li>
+  </ul>
+  <h2>22222</h2>
+  <ul>
+    <li v-for="(value,key) in persons[2]">
+      {{key}}-----{{value}}
+    </li>
+  </ul>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el:'#demo1',
+    data:{
+      persons:[
+        {name:'Tom',age:18},
+        {name:'Jerry',age:17},
+        {name:'Jack',age:19},
+        {name:'Rose',age:16},
+        {name:'Lily',age:20}
+      ]
+    },
+    methods:{
+      del(index){
+        this.persons.splice(index,1)
+      },
+      upd(index,newp){
+        this.persons.splice(index,1,newp)
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
